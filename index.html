@@ -369,6 +369,9 @@
     }
     .copy-btn:hover { background: rgba(255,255,255,0.1); }
 
+    .teacher-two-col { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 768px) { .teacher-two-col { grid-template-columns: 1fr; } }
+
     /* ── QUESTIONNAIRE ── */
     #questionnaire { background: var(--white); }
     .q-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
@@ -1127,11 +1130,12 @@
 <section id="teachers">
   <div class="section-inner">
     <div class="section-label fade-in" data-en="Teacher Portal" data-sv="Lärarportal">Teacher Portal</div>
-    <h2 class="section-title fade-in" data-en="Set up your class in seconds" data-sv="Konfigurera din klass på sekunder">Set up your class in seconds</h2>
-    <p class="section-sub fade-in" data-en="Enter your details below and we'll generate your teacher account credentials plus unique student login IDs for your whole class." data-sv="Ange dina uppgifter nedan så genererar vi dina lärarkontouppgifter plus unika student-ID:n för hela klassen.">Enter your details below and we'll generate your teacher account credentials plus unique student login IDs for your whole class.</p>
+    <h2 class="section-title fade-in" data-en="Set up your class" data-sv="Konfigurera din klass">Set up your class</h2>
+    <p class="section-sub fade-in" data-en="Fill in your details below. Your registration is saved automatically to the research team's records, and your student IDs are generated instantly." data-sv="Fyll i dina uppgifter nedan. Din registrering sparas automatiskt i forskarteamets register och dina elev-ID genereras direkt.">Fill in your details below. Your registration is saved automatically to the research team's records, and your student IDs are generated instantly.</p>
 
     <div class="portal-card fade-in">
-      <h3 data-en="🏫 Class Setup Generator" data-sv="🏫 Klassgenerator">🏫 Class Setup Generator</h3>
+      <h3 data-en="🏫 Class Registration" data-sv="🏫 Klassregistrering">🏫 Class Registration</h3>
+
       <div class="form-group">
         <label data-en="School Name" data-sv="Skolans namn">School Name</label>
         <input type="text" id="school-name" placeholder="e.g. Södermalm Primary School" />
@@ -1149,11 +1153,15 @@
         <input type="number" id="num-students" min="1" max="60" placeholder="e.g. 24" />
       </div>
       <button id="generate-btn" onclick="generateAccounts()">
-        <span data-en="Generate Accounts & Student IDs" data-sv="Generera konton och elev-ID">Generate Accounts & Student IDs</span>
+        <span data-en="Register & Generate Student IDs →" data-sv="Registrera och generera elev-ID →">Register & Generate Student IDs →</span>
       </button>
 
+      <div id="saving-indicator" style="display:none;margin-top:1rem;color:#adc3e8;font-size:0.85rem;text-align:center;">
+        <span data-en="⏳ Saving your registration..." data-sv="⏳ Sparar din registrering...">⏳ Saving your registration...</span>
+      </div>
+
       <div id="result-box">
-        <h4 data-en="✅ Your Credentials" data-sv="✅ Dina uppgifter">✅ Your Credentials</h4>
+        <h4 data-en="✅ Registration saved & IDs generated" data-sv="✅ Registrering sparad och ID genererade">✅ Registration saved & IDs generated</h4>
         <div class="account-info" id="account-info"></div>
         <div id="student-ids-container"></div>
         <button class="copy-btn" onclick="copyCredentials()" data-en="📋 Copy All to Clipboard" data-sv="📋 Kopiera allt">📋 Copy All to Clipboard</button>
@@ -1410,14 +1418,14 @@
 <footer>
   <strong>Vektor</strong>
   <p data-en="A research project by the Klingberg Lab · Karolinska Institutet<br>Contact: <a href='mailto:vektorproject2026@gmail.com' data-user="vektorproject2026" data-domain="gmail.com"><span class="eml"></span></a><br><a href='#' onclick='document.getElementById(&quot;gdpr-modal&quot;).classList.add(&quot;open&quot;);return false;' style='color:var(--teal)'>GDPR &amp; Personal Data Policy</a>" 
-     data-sv="Ett forskningsprojekt av Klingberg Lab · Karolinska Institutet<br>Kontakt: <a href='mailto:vektorproject2026@gmail.com' data-user="vektorproject2026" data-domain="gmail.com"><span class="eml"></span></a><br><a href='#' onclick='document.getElementById(&quot;gdpr-modal&quot;).classList.add(&quot;open&quot;);return false;' style='color:var(--teal)'>GDPR &amp; Personuppgiftspolicy</a>">
+     data-sv="Ett forskningsprojekt av Klingberg Lab · Karolinska Institutet<br>Kontakt: <a href="/cdn-cgi/l/email-protection#c5b3a0aeb1aab7b5b7aaafa0a6b1f7f5f7f385a2a8a4aca9eba6aaa8" data-user="vektorproject2026" data-domain="gmail.com"><span class="eml"></span></a><br><a href='#' onclick='document.getElementById(&quot;gdpr-modal&quot;).classList.add(&quot;open&quot;);return false;' style='color:var(--teal)'>GDPR &amp; Personuppgiftspolicy</a>">
      A research project by the Klingberg Lab · Karolinska Institutet<br>
      Contact: <a href="/cdn-cgi/l/email-protection#02746769766d7072706d686761763032303442656f636b6e2c616d6f"><span class="__cf_email__" data-cfemail="43352628372c3133312c292620377173717503242e222a2f6d202c2e">[email&#160;protected]</span></a><br>
      <a href="#" onclick="document.getElementById('gdpr-modal').classList.add('open');return false;" style="color:var(--teal)">GDPR &amp; Personal Data Policy</a>
   </p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function downloadGuide(mode) {
     if (mode === 'pdf') {
       alert(currentLang === 'sv' ? 'Lärarhandledning PDF laddas ner...\n(Länka din faktiska PDF-fil här i produktionen)' : 'Teacher Guide PDF downloading...\n(Link your actual PDF file here in production)');
@@ -1465,12 +1473,16 @@
     document.title = lang === 'sv' ? 'Vektor – Matematik för alla barn' : 'Vektor – Math Learning for Every Child';
   }
 
+  // ── GOOGLE SHEETS URL ──
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwfYrFTCpN-1EqbWBlkonTfvEwIZ_yp1K0mqN-KxHX07YDjLNCtUk6G02PEJ11H7arF/exec';
+
   // ── TEACHER PORTAL ──
   function generateAccounts() {
     const school = document.getElementById('school-name').value.trim();
     const email = document.getElementById('teacher-email').value.trim();
     const cls = document.getElementById('class-name').value.trim();
     const num = parseInt(document.getElementById('num-students').value);
+    const consent = document.getElementById('consent-check') ? document.getElementById('consent-check').value : 'Yes';
 
     if (!school || !email || !num || num < 1) {
       alert(currentLang === 'sv' ? 'Fyll i alla fält.' : 'Please fill in all fields.');
@@ -1479,6 +1491,22 @@
 
     const teacherCode = 'T-' + school.substring(0,3).toUpperCase().replace(/\s/g,'') + '-' + Math.random().toString(36).substr(2,5).toUpperCase();
     const teacherPass = 'Vektor-' + Math.random().toString(36).substr(2,8);
+
+    // Show saving indicator
+    const saving = document.getElementById('saving-indicator');
+    if (saving) saving.style.display = 'block';
+    document.getElementById('generate-btn').disabled = true;
+
+    // Save to Google Sheet
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ school, email, className: cls, students: num, consent, teacherCode, teacherPass })
+    }).catch(() => {}).finally(() => {
+      if (saving) saving.style.display = 'none';
+      document.getElementById('generate-btn').disabled = false;
+    });
 
     document.getElementById('account-info').innerHTML = `
       <div><strong>${currentLang==='sv'?'Lärarkonto':'Teacher Account'}:</strong> ${teacherCode}</div>
@@ -1602,7 +1630,7 @@
   // ── SCROLL ANIMATIONS ──
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.12 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>
