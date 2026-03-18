@@ -25,6 +25,10 @@ A single self-contained `index.html` file. Open it in any browser and it works.
 2. Make your changes
 3. Commit and push to GitHub — the live site updates automatically
 
+## Data
+
+Saved in a google sheets see Private : https://EllaGruber.github.io/vektor_internal
+   
 ## Live site
 
 Hosted on GitHub Pages at: `https://EllaGruber.github.io/vektor-project`
