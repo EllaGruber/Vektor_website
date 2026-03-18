@@ -29,6 +29,8 @@ A single self-contained `index.html` file — no frameworks, no dependencies, no
 
 Hosted on GitHub Pages at: `https://[username].github.io/vektor-project`
 
+See website at: https://htmlpreview.github.io/?https://github.com/EllaGruber/Vektor-website/blob/main/index.html
+
 ## Contact
 
 📧 vektorproject2026@gmail.com
