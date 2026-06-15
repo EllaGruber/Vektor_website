@@ -1053,8 +1053,8 @@
       <p data-en="Everything you need to run Vektor in your classroom. Step-by-step setup, tips, and FAQ." data-sv="Allt du behöver för att köra Vektor i klassrummet. Steg-för-steg, tips och vanliga frågor.">Everything you need to run Vektor in your classroom. Step-by-step setup, tips, and FAQ.</p>
     </div>
     <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
-      <a href="#" class="guide-btn" onclick="downloadGuide('pdf')">⬇️ <span data-en="Download PDF" data-sv="Ladda ner PDF">Download PDF</span></a>
-      <a href="#" class="guide-btn" style="background:white;color:var(--navy);" onclick="downloadGuide('view')">👁 <span data-en="View Online" data-sv="Visa online">View Online</span></a>
+      <a href="vektor-lararguide.pdf" download class="guide-btn">⬇️ <span data-en="Download PDF" data-sv="Ladda ner PDF">Download PDF</span></a>
+      <a href="vektor-lararguide.pdf" target="_blank" class="guide-btn" style="background:white;color:var(--navy);">👁 <span data-en="View Online" data-sv="Visa online">View Online</span></a>
     </div>
   </div>
 </div>
@@ -1582,13 +1582,6 @@
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  function downloadGuide(mode) {
-    if (mode === 'pdf') {
-      alert(currentLang === 'sv' ? 'Lärarhandledning PDF laddas ner...\n(Länka din faktiska PDF-fil här i produktionen)' : 'Teacher Guide PDF downloading...\n(Link your actual PDF file here in production)');
-    } else {
-      alert(currentLang === 'sv' ? 'Öppnar lärarguide online...\n(Länka din online guide-sida här)' : 'Opening Teacher Guide online...\n(Link your online guide page here)');
-    }
-  }
 
   // ── EMAIL PROTECTION ──
   document.querySelectorAll('[data-user][data-domain]').forEach(el => {
